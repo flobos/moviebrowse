@@ -1,14 +1,20 @@
 import './App.css';
 import React from "react";
 import Navbar from "./components/Navbar";
-
-
+import Home from "./components/Home"
+import AboutView from "./components/AboutView";
+import {Switch, Route } from 'react-router-dom'
 
 function App() {
   return (
     <div >
       <Navbar/>
-     <h1>Hello from react 201</h1>
+      <Switch>
+        <Route path="/" exact>
+            <Home/>
+        </Route>
+        <Route path="/about" component={AboutView}/>
+      </Switch>
     </div>
   );
 }
